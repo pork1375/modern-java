@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class Lambdas {
@@ -59,9 +58,15 @@ public class Lambdas {
 //    Function<Integer, Apple> c3 = Apple::new;
 //    Apple a3 = c3.apply(100);
 
-    BiFunction<Color, Integer, Apple> c4 = Apple::new;
+    BiFunction<Color, Integer, Apple> c4 = Apple::new;  // 메서드참조 문법
     Apple a4 = c4.apply(Color.GREEN, 100);
 
+    Runnable a = System.out::println;
+    System.out.println(a);
+
+    List<String> str = Arrays.asList("a", "c", "b");
+    str.sort(String::compareToIgnoreCase);
+    System.out.println(str);
 
   }
 
