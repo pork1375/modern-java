@@ -30,6 +30,7 @@ public class Lambdas {
     // 람다로 거름
     List<Apple> inventory = Arrays.asList(
         new Apple(80, Color.GREEN),
+        new Apple(80, Color.GREEN),
         new Apple(155, Color.GREEN),
         new Apple(120, Color.RED)
     );
@@ -67,6 +68,14 @@ public class Lambdas {
     List<String> str = Arrays.asList("a", "c", "b");
     str.sort(String::compareToIgnoreCase);
     System.out.println(str);
+
+    System.out.println("---");
+    inventory.sort(Comparator.comparing(Apple::getWeight)
+            .reversed()
+            .thenComparing(Apple::getColor));
+
+    System.out.println(inventory);
+
 
   }
 
