@@ -48,4 +48,5 @@ public class StreamBasic {
         .collect(toList()); // 모든 요리명을 리스트에 저장
   }
 
+
 }
