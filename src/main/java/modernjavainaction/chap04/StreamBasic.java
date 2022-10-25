@@ -15,6 +15,7 @@ public class StreamBasic {
     getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
 
     System.out.println("---");
+    System.out.println("---");
 
     // 자바 8
     getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
