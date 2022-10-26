@@ -41,6 +41,7 @@ public class StreamBasic {
     return lowCaloricDishesName;
   }
 
+  // 순서대로 처리
   public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes) {
     return dishes.stream()
         .filter(d -> d.getCalories() < 400) // 조건 : 400칼로리 이하
@@ -49,5 +50,13 @@ public class StreamBasic {
         .collect(toList()); // 모든 요리명을 리스트에 저장
   }
 
+  // 병렬 처리
+  public static List<String> getLowCalorParallelStream(List<Dish> dishes) {
+    return dishes.parallelStream()  // 병렬처리 스트림
+            .filter(d -> d.getCalories() < 400) // 조건 : 400칼로리 이하
+            .sorted(comparing(Dish::getCalories)) // 칼로리로 요소 정렬
+            .map(Dish::getName) // 요리명 추출
+            .collect(toList()); // 모든 요리명을 리스트에 저장
+  }
 
 }
